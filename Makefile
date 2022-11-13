@@ -2,8 +2,6 @@ NAME = libft.a
 
 CC = cc
 
-INCLUDE = libft.h
-
 CFLAGS = -Wall -Wextra -Werror
 
 sources = ft_isascii.c ft_memmove.c ft_strlen.c ft_isdigit.c\
@@ -33,7 +31,7 @@ $(NAME): $(objet)
 bonus : $(objet_bonus)
 	ar -rc $(NAME) $(objet_bonus)
 
-%.o : %.c $(INCLUDE)
+%.o : %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -44,4 +42,4 @@ fclean: clean
 
 re:	fclean all
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all bonus

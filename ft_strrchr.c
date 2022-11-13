@@ -6,7 +6,7 @@
 /*   By: isidki <isidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:01:12 by isidki            #+#    #+#             */
-/*   Updated: 2022/10/30 23:47:18 by isidki           ###   ########.fr       */
+/*   Updated: 2022/11/13 01:08:09 by isidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strrchr(const char *string, int c)
 
 	str = (char *) string;
 	len = ft_strlen (string);
-	if (!str)
-		return (NULL);
 	while (len >= 0)
 	{
 		if (*(str + len) == (char)c)

@@ -6,7 +6,7 @@
 /*   By: isidki <isidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 14:07:48 by isidki            #+#    #+#             */
-/*   Updated: 2022/10/23 12:30:19 by isidki           ###   ########.fr       */
+/*   Updated: 2022/11/13 02:15:40 by isidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	srclen = (unsigned int)ft_strlen(s);
 	i = -1;
 	if (start >= srclen)
-		return ((char *)ft_calloc(1, sizeof(char)));
-	if (len > ft_strlen(s))
-		len = ft_strlen(s);
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	sub = (char *) malloc(len + 1);
 	if (!sub)
 		return (NULL);

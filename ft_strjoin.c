@@ -6,7 +6,7 @@
 /*   By: isidki <isidki@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/15 15:26:01 by isidki            #+#    #+#             */
-/*   Updated: 2022/10/23 18:18:41 by isidki           ###   ########.fr       */
+/*   Updated: 2022/11/13 02:32:51 by isidki           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
-	int		i;
-	int		j;
+	size_t	i;
+	size_t	j;
 
 	if (!s1 || !s2)
 		return (NULL);
@@ -27,9 +27,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	if (s1 && s2)
 	{
-		ft_memmove(str, (void *)s1, i);
-		ft_memmove(str + i, (void *)s2, j);
-		ft_memset((void *)(str + i + j), '\0', 1);
+		ft_memcpy(str, (void *)s1, i);
+		ft_memcpy(str + i, (void *)s2, j);
+		*(str + i + j) = '\0';
 		return (str);
 	}
 	return (NULL);
